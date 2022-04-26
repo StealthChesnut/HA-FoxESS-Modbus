@@ -1,0 +1,83 @@
+# Add the contents of this file to your Home Assistant configuration.yaml
+# This file isn't a valid configuration file!
+
+modbus: !include modbus.yaml
+
+
+template:
+  - sensor:
+      - name: "Solar Production"
+        unit_of_measurement: "W"
+        state_class: measurement
+        device_class: power
+        state: >
+          {% set pv1 = states('sensor.pv1_power') | float %}
+          {% set pv2 = states('sensor.pv2_power') | float %}
+          {{ float(pv1) + float(pv2) }}
+        attributes:         
+          last_reset: '2022-04-01T00:00:00+00:00' 
+      - name: "Battery Discharge"
+        unit_of_measurement: W
+        state_class: measurement
+        device_class: power
+        state: >
+          {% if states('sensor.battery_discharge_power')|float > 0 %}
+            {{ 1 * states('sensor.battery_discharge_power') | float }}
+          {% else %}
+            0
+          {% endif %}
+        attributes:         
+          last_reset: '2022-04-01T00:00:00+00:00' 
+      - name: "Battery Charge"
+        unit_of_measurement: W
+        state_class: measurement
+        device_class: power
+        state: >
+          {% if states('sensor.battery_discharge_power')|float < 0 %}
+            {{ -1 * states('sensor.battery_discharge_power') | float }}
+          {% else %}
+            0
+          {% endif %}
+        attributes:         
+          last_reset: '2022-04-01T00:00:00+00:00'   
+    
+
+# Utility Meters - not required, may be useful
+utility_meter:
+  solar_production_front_um_daily:
+    source: sensor.solar_front_energy
+    cycle: daily
+  solar_production_rear_um_daily:
+    source: sensor.solar_rear_energy
+    cycle: daily    
+  solar_production_front_um_monthly:
+    source: sensor.solar_front_energy
+    cycle: monthly
+  solar_production_rear_um_monthly:
+    source: sensor.solar_rear_energy
+    cycle: monthly
+
+# These sensors are used in the HA Energy dashboard
+sensor:   
+  - platform: integration
+    name: "Solar Array 2 Energy"
+    source: sensor.pv2_power
+    unit_time: h
+    round: 2
+  - platform: integration
+    name: "Solar Array 1 Energy"
+    source: sensor.pv1_power
+    unit_time: h
+    round: 2
+  - platform: integration
+    name: "Battery Discharge Amount"
+    source: sensor.battery_discharge
+    unit_time: h
+    round: 2
+    method: left
+  - platform: integration
+    name: "Battery Charge Amount"
+    source: sensor.battery_charge
+    unit_time: h
+    round: 2
+    method: left  

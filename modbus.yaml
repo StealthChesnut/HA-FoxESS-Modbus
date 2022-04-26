@@ -1,0 +1,103 @@
+# Modbus Config for Fox ESS Hybrid H1 Inverter
+# Adjust port setting to match USB port in use
+# "slave" setting can be changed on Inverter Menu - Settings, Communication, RS485
+- name: FoxESSInverter
+  type: serial
+  baudrate: 9600
+  bytesize: 8
+  method: rtu
+  parity: N
+  port: /dev/ttyUSB0
+  stopbits: 1
+
+  sensors:
+    - name: "PV1-Voltage"
+      scan_interval: 10
+      slave: 247
+      address: 11000
+      state_class: measurement
+      unit_of_measurement: "V"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: input
+      device_class: voltage
+    - name: "PV1-Current"
+      scan_interval: 10
+      slave: 247
+      address: 11001
+      state_class: measurement
+      unit_of_measurement: "A"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: input      
+      device_class: current
+    - name: "PV1-Power"
+      scan_interval: 10
+      slave: 247
+      address: 11002
+      state_class: measurement
+      unit_of_measurement: "W"
+      data_type: int16
+      input_type: input      
+      device_class: power
+    - name: "PV2-Voltage"
+      scan_interval: 10
+      slave: 247
+      address: 11003
+      state_class: measurement
+      unit_of_measurement: "V"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: input
+      device_class: voltage
+    - name: "PV2-Current"
+      scan_interval: 10
+      slave: 247
+      address: 11004
+      state_class: measurement
+      unit_of_measurement: "A"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: input      
+      device_class: current
+    - name: "PV2-Power"
+      scan_interval: 10
+      slave: 247
+      address: 11005
+      state_class: measurement
+      unit_of_measurement: "W"
+      data_type: int16
+      input_type: input  
+      device_class: power
+    - name: "Battery-SoC"
+      scan_interval: 60
+      slave: 247
+      address: 11036
+      state_class: measurement
+      unit_of_measurement: "%"
+      data_type: int16
+      input_type: input
+      device_class: battery
+    - name: "Battery-Discharge-Power"
+      scan_interval: 10
+      slave: 247
+      address: 11008
+      state_class: measurement
+      unit_of_measurement: "W"
+      data_type: int16
+      input_type: input    
+      device_class: power
+    - name: "Load Power"
+      scan_interval: 10
+      slave: 247
+      address: 11023
+      state_class: measurement
+      unit_of_measurement: "W"
+      data_type: int16
+      input_type: input    
+      device_class: power
+
