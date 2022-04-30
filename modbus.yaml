@@ -100,4 +100,14 @@
       data_type: int16
       input_type: input    
       device_class: power
+    - name: "Battery temperature"
+      scan_interval: 60
+      slave: 247
+      address: 11038
+      state_class: measurement
+      unit_of_measurement: "°C"
+      scale: 0.1
+      data_type: int16
+      input_type: input
+      device_class: battery
 
