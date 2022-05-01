@@ -83,6 +83,16 @@
       scale: 0.1
       device_class: battery
       unit_of_measurement: "V"
+    - name: "InvBatPower"
+      scan_interval: 10
+      slave: 247
+      address: 11007
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      device_class: battery
+      scale: 0.01
+      unit_of_measurement: "kW"
     - name: "Battery-Discharge-Power"
       scan_interval: 10
       slave: 247
@@ -121,6 +131,24 @@
       data_type: int16
       input_type: input    
       device_class: power
+    - name: "InvTemperation"
+      scan_interval: 10
+      slave: 247
+      address: 11024
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      unit_of_measurement: "°C"
+      scale: 0.1
+    - name: "AmbientTemperature"
+      scan_interval: 10
+      slave: 247
+      address: 11025
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      unit_of_measurement: "°C"
+      scale: 0.1
     - name: "BatVolt"
       scan_interval: 10
       slave: 247
