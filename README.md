@@ -42,6 +42,6 @@ Select the Battery Dis/Charge Rate sensors
 
 
 
-The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has a reference for the registers.
+**The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has a reference for the registers.**
 
 
