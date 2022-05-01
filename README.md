@@ -21,7 +21,8 @@ The aim of this project is to enable the full use of the Energy dashboard in Hom
 * Find register and set up Utility Meter for Grid Consumption
 * Find register and set up Utility Meter for Return to Grid
 
-Steps:
+## ⌨️ Manual installation 
+
 * Take a copy / backup of your config and/or HA install before you change it! :)
 * Copy the contents of the configuration.yaml file to your config file into the appropriate places
 * Put the modbus.yaml file alongside your configuration.yaml file
