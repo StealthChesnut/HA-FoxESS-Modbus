@@ -52,6 +52,6 @@ Steps:
 <br>
 <br>
 
-> This plugin has been developed as a personal project, with no connection to the official brand of FoxESS, use of this plugin is intended for use by the community without fee but has no warrenty or liablity should any damage, harm or undesired results happen as a result of using this plugin. We strongly recommend that only competently trained indeviduals attempt to wire the additional connections required for this plugin to function. There is a risk of personal or device damage/harm.
+> This plugin has been developed as a personal project, with no connection to the official brand of FoxESS, use of this plugin is intended for use by the community without fee but has no warrenty or liablity should any damage, harm or undesired results happen as a result of using this plugin. We strongly recommend that only competently trained individuals attempt to wire the additional connections required for this plugin to function. There is a risk of personal or device damage/harm.
 You have been warned!
 
