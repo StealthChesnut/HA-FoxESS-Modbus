@@ -31,11 +31,11 @@ Steps:
 
 --Coming Soon--
 
-*Solar Panels*
+**Solar Panels**
 
 Select the solar_production__um_daily sensors
 
-*Home Batteries*
+**Home Batteries**
 
 Select the Battery Dis/Charge Rate sensors
 
