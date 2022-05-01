@@ -25,7 +25,7 @@ Steps:
 * Check your config is valid, then Restart HA if so
 
 
-## 💾 Energy Dashboard Configuration
+## Energy Dashboard Configuration
 
 *Electricity Grid*
 
