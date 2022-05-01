@@ -35,11 +35,11 @@ Steps:
 
 **Solar Panels**
 
-  == Select the solar_production__um_daily sensors==
+  == Select the solar_production__um_daily sensors ==
 
 **Home Batteries**
 
-  == Select the Battery Dis/Charge Rate sensors==
+  ==Select the Battery Dis/Charge Rate sensors==
 
 ---
 
