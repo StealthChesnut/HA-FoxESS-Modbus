@@ -6,7 +6,7 @@
 </h2>
 
 
-# Community created Home Assistant integration useing local native polling of data using RS485 port over Modbus to enable near realtime data access with no reliance on the FoxESS cloud portal
+<h2>Community created Home Assistant integration using local native polling of data using RS485 port over Modbus to enable near realtime data access with no reliance on the FoxESS cloud portal</h2>
 Home Assistant Modbus Integration setup for Fox ESS H1 Inverter
 
 Warning: The structure and meaning of the data fields have been guessed, not drawn from official documentation. There may be errors - Use this at your own risk.
