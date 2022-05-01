@@ -30,9 +30,9 @@ Steps:
 
 ## Energy Dashboard Configuration
 
-*Electricity Grid*
+**Electricity Grid**
 
---Coming Soon--
+- Coming Soon
 
 **Solar Panels**
 
