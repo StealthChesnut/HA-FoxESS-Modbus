@@ -9,6 +9,8 @@
 <b>A community maintained Home Assistant integration using local native polling of data using RS485 port over Modbus to enable near realtime data access with no reliance on the FoxESS cloud portal</b><br><br>
 Home Assistant Modbus Integration setup for Fox ESS H1 Series Inverters
 
+⚠️Requires additional hardware such as an RS485 to USB or a WIFI/LAN RS485 converter⚠️
+
 Warning: The structure and meaning of the data fields have been guessed, not drawn from official documentation. There may be errors - Use this at your own risk.
 
 The aim of this project is to enable the full use of the Energy dashboard in Home Assistant. The current status is most of this is functional, but there are a couple of todos:
@@ -39,6 +41,6 @@ Select the Battery Dis/Charge Rate sensors
 
 
 
-The Wiki has a reference for the registers.
+The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has a reference for the registers.
 
 
