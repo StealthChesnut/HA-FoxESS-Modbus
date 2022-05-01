@@ -9,10 +9,10 @@
 **A community maintained Home Assistant integration using local native polling of data using RS485 over Modbus to enable near realtime data access, with no reliance on the FoxESS cloud portal**
 
 ## Supported Hardware
-✅ H1-37-E
-✅ H1-5-E
-✅ AC-37-E
-✅ AC-5-E
+✅ H1-37-E <br>
+✅ H1-5-E <br>
+✅ AC-37-E <br>
+✅ AC-5-E <br>
 
 ---
 
