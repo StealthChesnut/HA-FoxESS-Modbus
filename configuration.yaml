@@ -1,4 +1,5 @@
 # Add the contents of this file to your Home Assistant configuration.yaml
+# Source https://github.com/StealthChesnut/HA-FoxESS-Modbus
 # This file isn't a valid configuration file!
 
 modbus: !include modbus.yaml
