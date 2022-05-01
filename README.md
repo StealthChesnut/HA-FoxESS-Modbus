@@ -15,7 +15,7 @@ Home Assistant Modbus Integration setup for Fox ESS H1 Series Inverters
 
 ---
 
-<p>Warning: The structure and meaning of the data fields have been guessed, not drawn from official documentation. There may be errors - Use this at your own risk.</p>
+<p>⚠️Warning: The structure and meaning of the data fields has been assumed, not drawn from official documentation. There may be errors - Use this at your own risk.</p>
 
 The aim of this project is to enable the full use of the Energy dashboard in Home Assistant. The current status is most of this is functional, but there are a couple of todos:
 * Find register and set up Utility Meter for Grid Consumption
