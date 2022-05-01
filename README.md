@@ -9,10 +9,20 @@
 **A community maintained Home Assistant integration using local native polling of data using RS485 over Modbus to enable near realtime data access, with no reliance on the FoxESS cloud portal**
 
 ## Supported Hardware
-✅ H1-37-E <br>
-✅ H1-5-E <br>
-✅ AC-37-E <br>
-✅ AC-5-E <br>
+Hybrid Series
+✅ H1-3.0-E <br>
+✅ H1-3.7-E <br>
+✅ H1-4.6-E <br>
+✅ H1-5.0-E <br>
+✅ H1-6.0-E <br>
+AC Series
+✅ AC-3.0-E <br>
+✅ AC-3.7-E <br>
+✅ AC-4.6-E <br>
+✅ AC-5.0-E <br>
+✅ AC-6.0-E <br>
+
+We strongly suspect that this plugin will also work with the FoxESS AIO series and 3PH series but have not yet tested. Please let us know if you have an AIO or 3PH system and if the plugin works.
 
 ---
 
