@@ -73,15 +73,16 @@
       data_type: int16
       input_type: input  
       device_class: power
-    - name: "Battery-SoC"
-      scan_interval: 60
+    - name: "InvBatVolt"
+      scan_interval: 10
       slave: 247
-      address: 11036
+      address: 11006
       state_class: measurement
-      unit_of_measurement: "%"
       data_type: int16
       input_type: input
+      scale: 0.1
       device_class: battery
+      unit_of_measurement: "V"
     - name: "Battery-Discharge-Power"
       scan_interval: 10
       slave: 247
@@ -90,6 +91,26 @@
       unit_of_measurement: "W"
       data_type: int16
       input_type: input    
+      device_class: power
+    - name: "RVolt"
+      scan_interval: 10
+      slave: 247
+      address: 11009
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      scale: 0.01
+      unit_of_measurement: V
+      device_class: power
+    - name: "RFreq"
+      scan_interval: 10
+      slave: 247
+      address: 11014
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      scale: 0.01
+      unit_of_measurement: "Hz"
       device_class: power
     - name: "Load Power"
       scan_interval: 10
@@ -100,6 +121,25 @@
       data_type: int16
       input_type: input    
       device_class: power
+    - name: "BatVolt"
+      scan_interval: 10
+      slave: 247
+      address: 11034
+      state_class: measurement
+      data_type: int16
+      input_type: input
+      scale: 0.1
+      device_class: battery
+      unit_of_measurement: "V"
+    - name: "Battery-SoC"
+      scan_interval: 60
+      slave: 247
+      address: 11036
+      state_class: measurement
+      unit_of_measurement: "%"
+      data_type: int16
+      input_type: input
+      device_class: battery
     - name: "Battery temperature"
       scan_interval: 60
       slave: 247
