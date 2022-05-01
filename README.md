@@ -11,7 +11,7 @@ Home Assistant Modbus Integration setup for Fox ESS H1 Series Inverters
 
 ---
 
-⚠️**Requires additional hardware** (RS485 to USB or a WIFI/LAN RS485 converter) and basic electronics competencies required to connect the two additional wires for the RS485 interface to the inverters com connector.⚠️
+⚠️**Requires additional hardware** (RS485 to USB or a WIFI/LAN RS485 converter) & basic electronics competencies required to connect the two additional wires for the RS485 interface to the inverters com connector.⚠️
 
 ---
 
@@ -45,5 +45,7 @@ Steps:
 ---
 
 **The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has references for the registers.**
+
+This plugin has been developed for use by the community without fee but has no warrenty or liablity should any damage, harm or undesired results happen as a result of using this plugin. You have been warned!
 
 
