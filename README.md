@@ -8,3 +8,5 @@ Steps:
 * Copy the contents of the configuration.yaml file to your config file into the appropriate places
 * Put the modbus.yaml file alongside your configuration.yaml file
 * Check your config is valid, then Restart HA if so
+
+The Wiki has a reference for the registers.
