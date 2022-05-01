@@ -1,3 +1,11 @@
+<h2 align="center">
+   <a href="https://www.fox-ess.com">FoxESS</a> and<a href="https://www.home-assistant.io"> Home Assistant</a> integration  🏡 ☀
+   </br></br>
+   <img src="https://github.com/home-assistant/brands/raw/master/custom_integrations/foxess/logo.png" >
+   </br>
+</h2>
+
+
 # HA-FoxESS-Modbus
 Home Assistant Modbus Integration setup for Fox ESS H1 Inverter
 
