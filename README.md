@@ -8,6 +8,12 @@
 
 **A community maintained Home Assistant integration using local native polling of data using RS485 over Modbus to enable near realtime data access, with no reliance on the FoxESS cloud portal**
 
+---
+
+⚠️**Requires additional hardware** (RS485 to USB or a WIFI/LAN RS485 converter) & basic electronics competencies required to connect the two additional wires for the RS485 interface to the inverters com connector.⚠️
+
+---
+
 ## Supported Hardware
 **Hybrid Series** <br>
 ✅ H1-3.0-E <br>
@@ -23,10 +29,6 @@
 ✅ AC-6.0-E <br>
 
 We strongly suspect that this plugin will also work with the FoxESS AIO series and 3PH series but have not yet tested. Please let us know if you have an AIO or 3PH system and if the plugin works.
-
----
-
-⚠️**Requires additional hardware** (RS485 to USB or a WIFI/LAN RS485 converter) & basic electronics competencies required to connect the two additional wires for the RS485 interface to the inverters com connector.⚠️
 
 ---
 
