@@ -109,7 +109,7 @@
       state_class: measurement
       data_type: int16
       input_type: input
-      scale: 0.01
+      scale: 0.1
       unit_of_measurement: V
       device_class: power
     - name: "RFreq"
