@@ -44,6 +44,7 @@ Steps:
 
 ---
 ## Provided Entities
+**Registers**
 **The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has references for the registers.**
 
 <br>
