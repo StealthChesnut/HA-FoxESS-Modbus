@@ -24,11 +24,12 @@ Steps:
 * Put the modbus.yaml file alongside your configuration.yaml file
 * Check your config is valid, then Restart HA if so
 
-Energy Dashboard Config:
+
+## 💾 Energy Dashboard Configuration
 
 *Electricity Grid*
 
---in progress--
+--Coming Soon--
 
 *Solar Panels*
 
@@ -37,10 +38,6 @@ Select the solar_production__um_daily sensors
 *Home Batteries*
 
 Select the Battery Dis/Charge Rate sensors
-
-
-
-
 
 **The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has references for the registers.**
 
