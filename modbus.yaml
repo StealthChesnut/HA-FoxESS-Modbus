@@ -2,6 +2,7 @@
 # Modbus Config for Fox ESS Hybrid H1 Inverter
 # Adjust port setting to match USB port in use
 # "slave" setting can be changed on Inverter Menu - Settings, Communication, RS485
+# ---------------------------USB/Serial--------------------------------------
 - name: FoxESSInverter
   type: serial
   baudrate: 9600
@@ -10,13 +11,17 @@
   parity: N
   port: /dev/ttyUSB0
   stopbits: 1
-
-# If using USR Wifi converter, remove lines 4 through 11 and uncomment the following
+# ---------------------------------------------------------------------------
+  
+# ---------------------------WIFI/LAN----------------------------------------
+# If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
+#
 #- name: FoxESSInverter
 #  type: tcp
 #  host: 192.168.XXX.XXX # set to USR devices ip address
 #  port: 502
-
+#
+# ---------------------------------------------------------------------------
 
   sensors:
     - name: "PV1-Voltage"
