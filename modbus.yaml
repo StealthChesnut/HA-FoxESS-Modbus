@@ -14,7 +14,7 @@
 # If using USR Wifi converter, remove lines 4 through 11 and uncomment the following
 #- name: FoxESSInverter
 #  type: tcp
-#  host: 192.168.XXX.XXX
+#  host: 192.168.XXX.XXX # set to USR devices ip address
 #  port: 502
 
 
