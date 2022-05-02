@@ -61,7 +61,6 @@ The aim of this project is to enable the full use of the Energy dashboard in Hom
 
 - Select the Battery Dis/Charge Rate sensors
 
----
 ## Provided Entities
 
 **Registers**
