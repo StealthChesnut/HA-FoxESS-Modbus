@@ -14,8 +14,9 @@
 
 ---
 
+
 ## Supported Hardware
-**Hybrid Series** <br>
+**Hybrid Series** <br> <img align="right" src="https://user-images.githubusercontent.com/6324545/166170598-7077d481-4d65-49b5-9816-1873c97dd853.png" >
 ✅ H1-3.0-E <br>
 ✅ H1-3.7-E <br>
 ✅ H1-4.6-E <br>
