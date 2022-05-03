@@ -51,7 +51,7 @@ The aim of this project is to enable the full use of the Energy dashboard in Hom
 ![image](https://user-images.githubusercontent.com/6324545/166470207-44236718-3f6c-4995-99fe-0a214eda49e6.png)
  
 
-# Energy Dashboard Values
+### Energy Dashboard Values
 
 ⚠️Some values won't appear until a small amount of data has passed through that value. You may need to wait 24hrs before you can setup the energy dashboard.
 
