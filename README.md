@@ -33,9 +33,7 @@ We strongly suspect that this plugin will also work with the FoxESS AIO series a
 
 ---
 
-<p>⚠️Warning: The structure and meaning of the data fields has been assumed, not drawn from official documentation. There may be errors - Use this at your own risk.</p>
-
-The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.
+<p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
 
 ## Manual installation 
 * Hardware configuration instructions can be found on the [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/)
