@@ -2,6 +2,7 @@
 # Modbus Config for Fox ESS Hybrid H1 Inverter
 # Adjust port setting to match USB port in use
 # "slave" setting can be changed on Inverter Menu - Settings, Communication, RS485 but is default to 247 from factory
+
 # ---------------------------USB/Serial--------------------------------------
 - name: FoxESSInverterModbus
   type: serial
