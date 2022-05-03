@@ -46,20 +46,27 @@ The aim of this project is to enable the full use of the Energy dashboard in Hom
 * Put the modbus.yaml file alongside your configuration.yaml file
 * Check your config is valid, then Restart HA if so
 
+## Engergy Dashboard Configuration
+
+![image](https://user-images.githubusercontent.com/6324545/166470207-44236718-3f6c-4995-99fe-0a214eda49e6.png)
+ 
 
 ## Energy Dashboard Configuration
 
 **Electricity Grid**
 
-- Coming Soon
+- grid_daily
+- feedin_daily
 
 **Solar Panels**
 
-- Select the solar_production__um_daily sensors 
+- pv1_daily
+- pv2_daily
 
 **Home Batteries**
 
-- Select the Battery Dis/Charge Rate sensors
+- bat_charge_daily
+- bat_discharge_daily
 
 ## Provided Entities
 
