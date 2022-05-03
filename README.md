@@ -55,6 +55,8 @@ The aim of this project is to enable the full use of the Energy dashboard in Hom
 
 **Electricity Grid**
 
+⚠️Some values won't appear until a small amount of data has passed through that value. You may need to wait 24hrs before you can setup the energy dashboard.
+
 - grid_daily
 - feedin_daily
 
