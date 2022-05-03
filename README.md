@@ -46,6 +46,7 @@ We strongly suspect that this plugin will also work with the FoxESS AIO series a
 * Check your config is valid, then Restart HA
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
+![image](https://user-images.githubusercontent.com/6324545/166503942-c9785460-f544-4364-8bbe-b852819cb255.png)
 [Step by step walkthrough of the setup](https://youtu.be/uMPr0V6lTHg)
 
 ## Engergy Dashboard Configuration
