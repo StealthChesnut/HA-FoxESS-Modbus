@@ -35,9 +35,7 @@ We strongly suspect that this plugin will also work with the FoxESS AIO series a
 
 <p>⚠️Warning: The structure and meaning of the data fields has been assumed, not drawn from official documentation. There may be errors - Use this at your own risk.</p>
 
-The aim of this project is to enable the full use of the Energy dashboard in Home Assistant. The current status is most of this is functional, but there are a couple of todos:
-* Find register and set up Utility Meter for Grid Consumption
-* Find register and set up Utility Meter for Return to Grid
+The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.
 
 ## Manual installation 
 * Hardware configuration instructions can be found on the [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/)
