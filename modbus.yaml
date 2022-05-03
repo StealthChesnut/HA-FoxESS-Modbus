@@ -3,7 +3,7 @@
 # Adjust port setting to match USB port in use
 # "slave" setting can be changed on Inverter Menu - Settings, Communication, RS485 but is default to 247 from factory
 # ---------------------------USB/Serial--------------------------------------
-- name: FoxESSInverter
+- name: FoxESSInverterModbus
   type: serial
   baudrate: 9600
   bytesize: 8
@@ -16,7 +16,7 @@
 # ---------------------------WIFI/LAN----------------------------------------
 # If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
 #
-#- name: FoxESSInverter
+#- name: FoxESSInverterModbus
 #  type: tcp
 #  host: 192.168.XXX.XXX # set to USR devices ip address
 #  port: 502
