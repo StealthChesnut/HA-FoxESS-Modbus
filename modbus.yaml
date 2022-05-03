@@ -135,6 +135,15 @@
       scale: 0.01
       unit_of_measurement: "Hz"
       device_class: power
+    - name: "GridConsumptionPower"
+      scan_interval: 1
+      slave: 247
+      address: 11021
+      state_class: measurement
+      unit_of_measurement: "W"
+      data_type: int16
+      input_type: input    
+      device_class: power
     - name: "Load Power"
       scan_interval: 10
       slave: 247
@@ -191,13 +200,4 @@
       data_type: int16
       input_type: input
       device_class: battery
-    - name: "GridConsumptionPower"
-      scan_interval: 1
-      slave: 247
-      address: 11021
-      state_class: measurement
-      unit_of_measurement: "W"
-      data_type: int16
-      input_type: input    
-      device_class: power
 
