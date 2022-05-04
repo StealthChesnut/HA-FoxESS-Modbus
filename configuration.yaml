@@ -52,7 +52,7 @@ sensor:
           device_class: power
           value_template: >
             {% if (states('sensor.battery_discharge_power') | float ) > 0 %}
-            {{ states('sensor.battery_discharge_power') | float * 0.001 }}
+            {{ states('sensor.battery_discharge_power') | float * 1 }}
             {% else %}
             0 
             {% endif %}
@@ -62,42 +62,46 @@ sensor:
           device_class: power
           value_template: >
             {% if (states('sensor.battery_discharge_power') | float ) < 0 %}
-            {{ states('sensor.battery_discharge_power') | float * -0.001 }}
+            {{ states('sensor.battery_discharge_power') | float * -1 }}
             {% else %}
             0 
             {% endif %}
+            
     feed_in_power:
           friendly_name: "FeedIn power"
           unit_of_measurement: 'kW'
           device_class: power
           value_template: >
-            {% if (states('sensor.gridconsumptionpower') | float ) > 0 %}
-            {{ states('sensor.gridconsumptionpower') | float * 0.001 }}
+            {% if (states('sensor.grid_ct') | float ) > 0 %}
+            {{ states('sensor.grid_ct') | float * 1 }}
             {% else %}
             0 
             {% endif %}
+            
     grid_consumption:
           friendly_name: "Grid consumption"
           unit_of_measurement: 'kW'
           device_class: power
           value_template: >
-            {% if (states('sensor.gridconsumptionpower') | float ) < 0 %}
-            {{ states('sensor.gridconsumptionpower') | float * -0.001 }}
+            {% if (states('sensor.grid_ct') | float ) < 0 %}
+            {{ states('sensor.grid_ct') | float * -1 }}
             {% else %}
             0 
             {% endif %}
+            
     pv_total_power:
           friendly_name: "PV Power now"
           unit_of_measurement: 'kW'
           device_class: power
           value_template: >
-              {{ (states('sensor.pv1_power') | float + states('sensor.pv2_power') | float ) * 0.001 }}
+              {{ (states('sensor.pv1_power') | float + states('sensor.pv2_power') | float ) * 1 }}
+              
     pv_total_daily:
           friendly_name: "PV Energy daily"
           unit_of_measurement: 'kWh'
           device_class: energy
           value_template: >
-              {{ ((states('sensor.pv1_daily') | float + states('sensor.pv2_daily') | float ) * 0.001 ) | round(2) }} 
+              {{ ((states('sensor.pv1_daily') | float + states('sensor.pv2_daily') | float ) * 1 ) | round(2) }} 
 
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:
