@@ -79,8 +79,12 @@ We strongly suspect that this plugin will also work with the FoxESS AIO series a
 
 **The [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/Data-Register-Reference---H1-AC1) has references for the registers.**
 
+
 <br>
 <br>
+
+---
+
 Please read and understand before using this plugin:
 
 > This plugin has been developed as a personal project, with no connection to the official brand of FoxESS, use of this plugin is intended for use by the community without fee but has no warrenty or liablity should any damage, harm or undesired results happen as a result of using this plugin. We strongly recommend that only competently trained individuals attempt to wire the additional connections required for this plugin to function. There is a risk of personal or device damage/harm.
