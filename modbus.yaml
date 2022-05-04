@@ -26,7 +26,7 @@
 
   sensors:
     - name: "PV1-Voltage"
-      scan_interval: 21
+      scan_interval: 30
       slave: 247
       address: 11000
       state_class: measurement
@@ -37,7 +37,7 @@
       input_type: input
       device_class: voltage
     - name: "PV1-Current"
-      scan_interval: 22
+      scan_interval: 30
       slave: 247
       address: 11001
       state_class: measurement
@@ -48,7 +48,7 @@
       input_type: input      
       device_class: current
     - name: "PV1-Power"
-      scan_interval: 6
+      scan_interval: 1
       slave: 247
       address: 11002
       state_class: measurement
@@ -59,7 +59,7 @@
       input_type: input      
       device_class: power
     - name: "PV2-Voltage"
-      scan_interval: 22
+      scan_interval: 30
       slave: 247
       address: 11003
       state_class: measurement
@@ -70,7 +70,7 @@
       input_type: input
       device_class: voltage
     - name: "PV2-Current"
-      scan_interval: 21
+      scan_interval: 30
       slave: 247
       address: 11004
       state_class: measurement
@@ -81,7 +81,7 @@
       input_type: input      
       device_class: current
     - name: "PV2-Power"
-      scan_interval: 6
+      scan_interval: 1
       slave: 247
       address: 11005
       state_class: measurement
@@ -92,7 +92,7 @@
       input_type: input  
       device_class: power
     - name: "Battery-SoC"
-      scan_interval: 91
+      scan_interval: 30
       slave: 247
       address: 11036
       state_class: measurement
@@ -101,7 +101,7 @@
       input_type: input
       device_class: battery
     - name: "Battery-Temp"
-      scan_interval: 13
+      scan_interval: 60
       slave: 247
       address: 11038
       state_class: measurement
