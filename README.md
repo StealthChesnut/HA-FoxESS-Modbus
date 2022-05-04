@@ -1,4 +1,4 @@
-## ⚠️ Not yet stable, modbus & config file under regular change until v1.0 due Friday 6th May
+## ⚠️ Not yet stable, modbus & config file under regular change until v1.0 due Friday 6th May - Not recommended for production yet
 
 <h2 align="center">
    <a href="https://www.fox-ess.com">FoxESS</a> and<a href="https://www.home-assistant.io"> Home Assistant</a> integration via Modbus RS485
