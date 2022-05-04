@@ -112,7 +112,7 @@
       input_type: input
       device_class: temperature
     - name: "Battery-Discharge-Power"
-      scan_interval: 5
+      scan_interval: 1
       slave: 247
       address: 11008
       state_class: measurement
@@ -123,7 +123,7 @@
       input_type: input    
       device_class: power
     - name: "Load Power"
-      scan_interval: 5
+      scan_interval: 1
       slave: 247
       address: 11023
       state_class: measurement
@@ -144,7 +144,7 @@
       precision: 1
       input_type: input
     - name: "InvBatPower"
-      scan_interval: 30
+      scan_interval: 1
       slave: 247
       address: 11007
       state_class: measurement
@@ -164,7 +164,7 @@
       precision: 1
       input_type: input
     - name: "RCurrent"
-      scan_interval: 29
+      scan_interval: 30
       slave: 247
       address: 11010
       state_class: measurement
@@ -194,7 +194,7 @@
       precision: 1
       input_type: input
     - name: "Grid CT"
-      scan_interval: 5
+      scan_interval: 1
       slave: 247
       address: 11021
       state_class: measurement
