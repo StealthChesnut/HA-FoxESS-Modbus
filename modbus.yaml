@@ -164,6 +164,7 @@
       scale: 0.1
       precision: 1
       input_type: input
+      device_class: voltage
     - name: "RCurrent"
       scan_interval: 30
       slave: 247
@@ -174,6 +175,7 @@
       scale: 0.1
       precision: 1
       input_type: input
+      device_class: current
     - name: "RFreq"
       scan_interval: 30
       slave: 247
@@ -184,6 +186,7 @@
       scale: 0.01
       precision: 3
       input_type: input
+      device_class: frequency
     - name: "EPS RVolt"
       scan_interval: 30
       slave: 247
