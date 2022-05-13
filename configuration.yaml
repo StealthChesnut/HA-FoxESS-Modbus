@@ -43,6 +43,11 @@ sensor:
   source: sensor.grid_consumption
   unit_time: h
   round: 2
+  # platform: integration
+  # name: losses_sum
+  # source: sensor.system_losses
+  # unit_time: h
+  # round: 2
 
  #Templates enable math operations against states/values to give us better data
 - platform: template
@@ -104,6 +109,19 @@ sensor:
           value_template: >
               {{ ((states('sensor.pv1_daily') | float + states('sensor.pv2_daily') | float ) * 1 ) | round(2) }} 
 
+    # system_losses:
+    #       friendly_name: "System Losses"
+    #       unit_of_measurement: 'kW'
+    #       device_class: power
+    #       value_template: >
+    #           {{ ((states('sensor.pv1_power') | float
+    #           + states('sensor.pv2_power') | float
+    #           + states('sensor.grid_consumption') | float
+    #           + states('sensor.battery_discharge') | float
+    #           - states('sensor.battery_charge') | float
+    #           - states('sensor.feedin_power') | float
+    #           - states('sensor.load_power') | float )) | round(2) }}
+
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:
   load_daily:
@@ -127,3 +145,6 @@ utility_meter:
   grid_daily:
     source: sensor.grid_consumption_sum
     cycle: daily
+  # losses_daily:
+  #   source: sensor:losses_sum
+  #   cycle: daily
