@@ -1,56 +1,45 @@
+# v0.9
 # Created by https://github.com/StealthChesnut/HA-FoxESS-Modbus
 # Modbus Config for Fox ESS Hybrid H1 Inverter
-# Adjust port setting to match USB port in use
-# "slave" setting can be changed on Inverter Menu - Settings, Communication, RS485 but is default to 247 from factory
-
-# ---------------------------USB/Serial--------------------------------------
-- name: FoxESSInverterModbus
-  type: serial
-  baudrate: 9600
-  bytesize: 8
-  method: rtu
-  parity: N
-  port: /dev/ttyUSB0
-  stopbits: 1
-# ---------------------------------------------------------------------------
   
-# ---------------------------WIFI/LAN----------------------------------------
-# If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
+# ---------------------------Direct LAN Connection----------------------------------------
+#  For use when connecting direct to LAN port of inverter
 #
-#- name: FoxESSInverterModbus
-#  type: tcp
-#  host: 192.168.XXX.XXX # set to USR devices ip address
-#  port: 502
+#- name: HA-FoxESS-Modbus-LAN
+  type: tcp
+  host: !secret FoxESSInverterIP # set to USR devices ip address
+  port: 502
 #
 # ---------------------------------------------------------------------------
+# Uncomment the sensors you wish to use
 
   sensors:
-    - name: "PV1-Voltage"
-      scan_interval: 30
-      slave: 247
-      address: 11000
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input
-      device_class: voltage
-    - name: "PV1-Current"
-      scan_interval: 30
-      slave: 247
-      address: 11001
-      state_class: measurement
-      unit_of_measurement: "A"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input      
-      device_class: current
+    # - name: "PV1-Voltage"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 31000
+    #   state_class: measurement
+    #   unit_of_measurement: "V"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: input
+    #   device_class: voltage
+    # - name: "PV1-Current"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 31001
+    #   state_class: measurement
+    #   unit_of_measurement: "A"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: input      
+    #   device_class: current
     - name: "PV1-Power"
       scan_interval: 5
       slave: 247
-      address: 11002
+      address: 31002
       state_class: measurement
       unit_of_measurement: "kW"
       data_type: int16
@@ -58,32 +47,32 @@
       precision: 3
       input_type: input      
       device_class: power
-    - name: "PV2-Voltage"
-      scan_interval: 30
-      slave: 247
-      address: 11003
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input
-      device_class: voltage
-    - name: "PV2-Current"
-      scan_interval: 30
-      slave: 247
-      address: 11004
-      state_class: measurement
-      unit_of_measurement: "A"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input      
-      device_class: current
+    # - name: "PV2-Voltage"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 31003
+    #   state_class: measurement
+    #   unit_of_measurement: "V"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: input
+    #   device_class: voltage
+    # - name: "PV2-Current"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 31004
+    #   state_class: measurement
+    #   unit_of_measurement: "A"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: input      
+    #   device_class: current
     - name: "PV2-Power"
       scan_interval: 5
       slave: 247
-      address: 11005
+      address: 31005
       state_class: measurement
       unit_of_measurement: "kW"
       data_type: int16
@@ -91,6 +80,53 @@
       precision: 3
       input_type: input  
       device_class: power
+
+    - name: "RVolt" # Grid Voltage
+      scan_interval: 30
+      slave: 247
+      address: 31006
+      state_class: measurement
+      unit_of_measurement: "V"
+      data_type: int16
+      precision: 1
+      input_type: input
+      device_class: voltage
+    # - name: "RCurrent" # Generated AC Current ?
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 31007
+    #   state_class: measurement
+    #   unit_of_measurement: "A"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: input
+    #   device_class: current
+    # - name: "31008" # Generated AC Watts ?
+    #   scan_interval: 5
+    #   slave: 247
+    #   address: 31008
+    #   state_class: measurement
+    #   unit_of_measurement: "kW"
+    #   data_type: int16
+    #   scale: 0.001
+    #   precision: 3
+    #   input_type: input  
+    #   device_class: power
+    - name: "RFreq" # Grid Frequency
+      scan_interval: 30
+      slave: 247
+      address: 31009
+      state_class: measurement
+      unit_of_measurement: "Hz"
+      data_type: int16
+      scale: 0.01
+      precision: 3
+      input_type: input
+      device_class: frequency
+
+# Below here to be confirmed
+
     - name: "Battery-SoC"
       scan_interval: 30
       slave: 247
@@ -153,39 +189,8 @@
       scale: 0.01
       precision: 2
       input_type: input
-    - name: "RVolt"
-      scan_interval: 30
-      slave: 247
-      address: 11009
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input
-      device_class: voltage
-    - name: "RCurrent"
-      scan_interval: 30
-      slave: 247
-      address: 11010
-      state_class: measurement
-      unit_of_measurement: "A"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: input
-      device_class: current
-    - name: "RFreq"
-      scan_interval: 30
-      slave: 247
-      address: 11014
-      state_class: measurement
-      unit_of_measurement: "Hz"
-      data_type: int16
-      scale: 0.01
-      precision: 3
-      input_type: input
-      device_class: frequency
+
+
     - name: "EPS RVolt"
       scan_interval: 30
       slave: 247
