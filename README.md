@@ -40,8 +40,6 @@ Note: Currently investigating direct LAN connection - additional hardware detail
 ✅ AIO-H1-5.0 <br>
 ✅ AIO-H1-6.0 <br>
 
-We strongly suspect that this plugin will also work with the FoxESS AIO series and 3PH series but have not yet tested. Please let us know if you have an AIO or 3PH system and if the plugin works.
-
 ---
 
 <p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
