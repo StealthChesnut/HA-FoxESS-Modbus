@@ -33,6 +33,12 @@ Note: Currently investigating direct LAN connection - additional hardware detail
 ✅ AC-4.6-E <br>
 ✅ AC-5.0-E <br>
 ✅ AC-6.0-E <br>
+**AIO Series** <br>
+✅ AIO-H1-3.0 <br>
+✅ AIO-H1-3.7 <br>
+✅ AIO-H1-4.6 <br>
+✅ AIO-H1-5.0 <br>
+✅ AIO-H1-6.0 <br>
 
 We strongly suspect that this plugin will also work with the FoxESS AIO series and 3PH series but have not yet tested. Please let us know if you have an AIO or 3PH system and if the plugin works.
 
