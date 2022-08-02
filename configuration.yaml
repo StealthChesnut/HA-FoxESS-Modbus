@@ -117,18 +117,18 @@ sensor:
           value_template: >
               {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
 
-     system_losses:
-           friendly_name: "System Losses"
-           unit_of_measurement: 'kW'
-           device_class: power
-           value_template: >
-               {{ ((states('sensor.pv1_power') | float(default=0)
-               + states('sensor.pv2_power') | float(default=0)
-               + states('sensor.grid_consumption') | float(default=0)
-               + states('sensor.battery_discharge') | float(default=0)
-               - states('sensor.battery_charge') | float(default=0)
-               - states('sensor.feedin_power') | float(default=0)
-               - states('sensor.load_power') | float(default=0) )) | round(2) }}
+    system_losses:
+          friendly_name: "System Losses"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+              {{ ((states('sensor.pv1_power') | float(default=0)
+              + states('sensor.pv2_power') | float(default=0)
+              + states('sensor.grid_consumption') | float(default=0)
+              + states('sensor.battery_discharge') | float(default=0)
+              - states('sensor.battery_charge') | float(default=0)
+              - states('sensor.feedin_power') | float(default=0)
+              - states('sensor.load_power') | float(default=0) )) | round(2) }}
 
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:

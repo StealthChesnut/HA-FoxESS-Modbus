@@ -206,6 +206,16 @@
       scale: 0.001
       precision: 3
       input_type: input
+    - name: "CT2 Meter"
+      scan_interval: 1
+      slave: 247
+      address: 11022
+      state_class: measurement
+      unit_of_measurement: "kW"
+      data_type: int16
+      scale: 0.001
+      precision: 3
+      input_type: input
     - name: "InvTemp"
       scan_interval: 30
       slave: 247
