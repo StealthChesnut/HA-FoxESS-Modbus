@@ -21,7 +21,6 @@
 #  type: tcp
 #  host: 192.168.XXX.XXX # set to USR devices ip address
 #  port: 502
-#
 # ---------------------------------------------------------------------------
 
   sensors:
@@ -260,3 +259,5 @@
       precision: 1
       device_class: temperature
       input_type: input
+
+  !include sensors.yaml

@@ -14,28 +14,28 @@
 # Uncomment the sensors you wish to use
 
   sensors:
-    # - name: "PV1-Voltage"
-    #   scan_interval: 30
-    #   slave: 247
-    #   address: 31000
-    #   state_class: measurement
-    #   unit_of_measurement: "V"
-    #   data_type: int16
-    #   scale: 0.1
-    #   precision: 1
-    #   input_type: input
-    #   device_class: voltage
-    # - name: "PV1-Current"
-    #   scan_interval: 30
-    #   slave: 247
-    #   address: 31001
-    #   state_class: measurement
-    #   unit_of_measurement: "A"
-    #   data_type: int16
-    #   scale: 0.1
-    #   precision: 1
-    #   input_type: input      
-    #   device_class: current
+    - name: "PV1-Voltage"
+      scan_interval: 30
+      slave: 247
+      address: 31000
+      state_class: measurement
+      unit_of_measurement: "V"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: holding
+      device_class: voltage
+    - name: "PV1-Current"
+      scan_interval: 30
+      slave: 247
+      address: 31001
+      state_class: measurement
+      unit_of_measurement: "A"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: holding      
+      device_class: current
     - name: "PV1-Power"
       scan_interval: 5
       slave: 247
@@ -45,30 +45,30 @@
       data_type: int16
       scale: 0.001
       precision: 3
-      input_type: input      
+      input_type: holding      
       device_class: power
-    # - name: "PV2-Voltage"
-    #   scan_interval: 30
-    #   slave: 247
-    #   address: 31003
-    #   state_class: measurement
-    #   unit_of_measurement: "V"
-    #   data_type: int16
-    #   scale: 0.1
-    #   precision: 1
-    #   input_type: input
-    #   device_class: voltage
-    # - name: "PV2-Current"
-    #   scan_interval: 30
-    #   slave: 247
-    #   address: 31004
-    #   state_class: measurement
-    #   unit_of_measurement: "A"
-    #   data_type: int16
-    #   scale: 0.1
-    #   precision: 1
-    #   input_type: input      
-    #   device_class: current
+    - name: "PV2-Voltage"
+      scan_interval: 30
+      slave: 247
+      address: 31003
+      state_class: measurement
+      unit_of_measurement: "V"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: holding
+      device_class: voltage
+    - name: "PV2-Current"
+      scan_interval: 30
+      slave: 247
+      address: 31004
+      state_class: measurement
+      unit_of_measurement: "A"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: holding      
+      device_class: current
     - name: "PV2-Power"
       scan_interval: 5
       slave: 247
@@ -78,7 +78,7 @@
       data_type: int16
       scale: 0.001
       precision: 3
-      input_type: input  
+      input_type: holding  
       device_class: power
 
     - name: "RVolt" # Grid Voltage
@@ -89,30 +89,30 @@
       unit_of_measurement: "V"
       data_type: int16
       precision: 1
-      input_type: input
+      input_type: holding
       device_class: voltage
-    # - name: "RCurrent" # Generated AC Current ?
-    #   scan_interval: 30
-    #   slave: 247
-    #   address: 31007
-    #   state_class: measurement
-    #   unit_of_measurement: "A"
-    #   data_type: int16
-    #   scale: 0.1
-    #   precision: 1
-    #   input_type: input
-    #   device_class: current
-    # - name: "31008" # Generated AC Watts ?
-    #   scan_interval: 5
-    #   slave: 247
-    #   address: 31008
-    #   state_class: measurement
-    #   unit_of_measurement: "kW"
-    #   data_type: int16
-    #   scale: 0.001
-    #   precision: 3
-    #   input_type: input  
-    #   device_class: power
+    - name: "RCurrent" # Generated AC Current ?
+      scan_interval: 30
+      slave: 247
+      address: 31007
+      state_class: measurement
+      unit_of_measurement: "A"
+      data_type: int16
+      scale: 0.1
+      precision: 1
+      input_type: holding
+      device_class: current
+    - name: "31008" # Generated AC Watts ?
+      scan_interval: 5
+      slave: 247
+      address: 31008
+      state_class: measurement
+      unit_of_measurement: "kW"
+      data_type: int16
+      scale: 0.001
+      precision: 3
+      input_type: holding  
+      device_class: power
     - name: "RFreq" # Grid Frequency
       scan_interval: 30
       slave: 247
@@ -122,7 +122,7 @@
       data_type: int16
       scale: 0.01
       precision: 3
-      input_type: input
+      input_type: holding
       device_class: frequency
 
 # Below here to be confirmed
@@ -134,7 +134,7 @@
       state_class: measurement
       unit_of_measurement: "%"
       data_type: int16
-      input_type: input
+      input_type: holding
       device_class: battery
     - name: "Battery-Temp"
       scan_interval: 60
@@ -145,7 +145,7 @@
       scale: 0.1
       precision: 1
       data_type: int16
-      input_type: input
+      input_type: holding
       device_class: temperature
     - name: "Battery-Discharge-Power"
       scan_interval: 5
@@ -156,7 +156,7 @@
       data_type: int16
       scale: 0.001
       precision: 3
-      input_type: input    
+      input_type: holding    
       device_class: power
     - name: "Load Power"
       scan_interval: 5
@@ -167,7 +167,7 @@
       data_type: int16
       scale: 0.001
       precision: 3
-      input_type: input    
+      input_type: holding    
       device_class: power
     - name: "InvBatVolt"
       scan_interval: 30
@@ -178,7 +178,7 @@
       data_type: int16
       scale: 0.1
       precision: 1
-      input_type: input
+      input_type: holding
     - name: "InvBatPower"
       scan_interval: 5
       slave: 247
@@ -188,7 +188,7 @@
       data_type: int16
       scale: 0.01
       precision: 2
-      input_type: input
+      input_type: holding
 
 
     - name: "EPS RVolt"
@@ -200,7 +200,7 @@
       data_type: int16
       scale: 0.1
       precision: 1
-      input_type: input
+      input_type: holding
     - name: "Grid CT"
       scan_interval: 5
       slave: 247
@@ -210,7 +210,7 @@
       data_type: int16
       scale: 0.001
       precision: 3
-      input_type: input
+      input_type: holding
     - name: "InvTemp"
       scan_interval: 30
       slave: 247
@@ -221,7 +221,7 @@
       scale: 0.1
       precision: 1
       device_class: temperature
-      input_type: input
+      input_type: holding
     - name: "AmbTemp"
       scan_interval: 30
       slave: 247
@@ -232,7 +232,7 @@
       scale: 0.1
       precision: 1
       device_class: temperature
-      input_type: input
+      input_type: holding
     - name: "BatVolt"
       scan_interval: 30
       slave: 247
@@ -243,7 +243,7 @@
       scale: 0.1
       precision: 1
       device_class: voltage
-      input_type: input
+      input_type: holding
     - name: "Temp"
       scan_interval: 30
       slave: 247
@@ -254,4 +254,4 @@
       scale: 0.1
       precision: 1
       device_class: temperature
-      input_type: input
+      input_type: holding

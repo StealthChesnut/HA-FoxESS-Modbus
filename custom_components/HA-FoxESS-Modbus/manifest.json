@@ -1,0 +1,11 @@
+{
+    "domain": "FoxESS_Modbus",
+    "name": "FoxESS Community Modbus Integration",
+    "documentation": "https://github.com/StealthChesnut/HA-FoxESS-Modbus",
+    "issue_tracker": "https://github.com/StealthChesnut/HA-FoxESS-Modbus/issues",
+    "dependencies": ["modbus"],
+    "codeowners": ["@StealthChesnut"],
+    "requirements": [],
+    "iot_class": "local_polling",
+	"version" : "1.0.0"
+  }

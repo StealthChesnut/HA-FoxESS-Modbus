@@ -1,0 +1,153 @@
+# Source https://github.com/StealthChesnut/HA-FoxESS-Modbus
+#FoxESS Plugin - Sensor Configuration and Mappings
+
+#Sensors turn power values into power/hour values for meters
+sensor:
+- platform: integration
+  name: pv1_sum
+  source: sensor.pv1_power
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: pv2_sum
+  source: sensor.pv2_power
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: load_sum
+  source: sensor.load_power
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: bat_charge_sum
+  source: sensor.battery_charge
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: bat_discharge_sum
+  source: sensor.battery_discharge
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: feedin_sum
+  source: sensor.feed_in_power
+  unit_time: h
+  method: left
+  round: 2
+- platform: integration
+  name: grid_consumption_sum
+  source: sensor.grid_consumption
+  unit_time: h
+  method: left
+  round: 2
+  # platform: integration
+  # name: losses_sum
+  # source: sensor.system_losses
+  # unit_time: h
+  # method: left
+  # round: 2
+
+ #Templates enable math operations against states/values to give us better data
+- platform: template
+  sensors:
+    battery_discharge:
+          friendly_name: "Battery discharge"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+            {% if (states('sensor.battery_discharge_power') | float(default=0) ) > 0 %}
+            {{ states('sensor.battery_discharge_power') | float(default=0) * 1 }}
+            {% else %}
+            0 
+            {% endif %}
+    battery_charge:
+          friendly_name: "Battery charge"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+            {% if (states('sensor.battery_discharge_power') | float(default=0) ) < 0 %}
+            {{ states('sensor.battery_discharge_power') | float(default=0) * -1 }}
+            {% else %}
+            0 
+            {% endif %}
+            
+    feed_in_power:
+          friendly_name: "FeedIn power"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+            {% if (states('sensor.grid_ct') | float(default=0) ) > 0 %}
+            {{ states('sensor.grid_ct') | float(default=0) * 1 }}
+            {% else %}
+            0 
+            {% endif %}
+            
+    grid_consumption:
+          friendly_name: "Grid consumption"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+            {% if (states('sensor.grid_ct') | float(default=0) ) < 0 %}
+            {{ states('sensor.grid_ct') | float(default=0) * -1 }}
+            {% else %}
+            0 
+            {% endif %}
+            
+    pv_total_power:
+          friendly_name: "PV Power now"
+          unit_of_measurement: 'kW'
+          device_class: power
+          value_template: >
+              {{ (states('sensor.pv1_power') | float(default=0) + states('sensor.pv2_power') | float(default=0) ) * 1 }}
+              
+    pv_total_daily:
+          friendly_name: "PV Energy daily"
+          unit_of_measurement: 'kWh'
+          device_class: energy
+          value_template: >
+              {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
+
+    system_losses:
+           friendly_name: "System Losses"
+           unit_of_measurement: 'kW'
+           device_class: power
+           value_template: >
+               {{ ((states('sensor.pv1_power') | float(default=0)
+               + states('sensor.pv2_power') | float(default=0)
+               + states('sensor.grid_consumption') | float(default=0)
+               + states('sensor.battery_discharge') | float(default=0)
+               - states('sensor.battery_charge') | float(default=0)
+               - states('sensor.feedin_power') | float(default=0)
+               - states('sensor.load_power') | float(default=0) )) | round(2) }}
+
+# Utility Meters - Provides meters to be used with the energy dashboard and reset daily
+utility_meter:
+  load_daily:
+    source: sensor.load_sum
+    cycle: daily
+  pv1_daily:
+    source: sensor.pv1_sum
+    cycle: daily
+  pv2_daily:
+    source: sensor.pv2_sum
+    cycle: daily
+  bat_charge_daily:
+    source: sensor.bat_charge_sum
+    cycle: daily
+  bat_discharge_daily:
+    source: sensor.bat_discharge_sum
+    cycle: daily
+  feedin_daily:
+    source: sensor.feedin_sum
+    cycle: daily
+  grid_daily:
+    source: sensor.grid_consumption_sum
+    cycle: daily
+   losses_daily:
+     source: sensor:losses_sum
+     cycle: daily
