@@ -124,13 +124,10 @@
       precision: 3
       input_type: holding
       device_class: frequency
-
-# Below here to be confirmed
-
     - name: "Battery-SoC"
       scan_interval: 30
       slave: 247
-      address: 11036
+      address: 31024
       state_class: measurement
       unit_of_measurement: "%"
       data_type: int16
@@ -139,7 +136,7 @@
     - name: "Battery-Temp"
       scan_interval: 60
       slave: 247
-      address: 11038
+      address: 31023
       state_class: measurement
       unit_of_measurement: "°C"
       scale: 0.1
@@ -150,7 +147,7 @@
     - name: "Battery-Discharge-Power"
       scan_interval: 5
       slave: 247
-      address: 11008
+      address: 31022
       state_class: measurement
       unit_of_measurement: "kW"
       data_type: int16
@@ -161,7 +158,7 @@
     - name: "Load Power"
       scan_interval: 5
       slave: 247
-      address: 11023
+      address: 31016
       state_class: measurement
       unit_of_measurement: "kW"
       data_type: int16
@@ -169,89 +166,92 @@
       precision: 3
       input_type: holding    
       device_class: power
-    - name: "InvBatVolt"
-      scan_interval: 30
-      slave: 247
-      address: 11006
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: holding
-    - name: "InvBatPower"
-      scan_interval: 5
-      slave: 247
-      address: 11007
-      state_class: measurement
-      unit_of_measurement: "kW"
-      data_type: int16
-      scale: 0.01
-      precision: 2
-      input_type: holding
+      
+      # Below here to be confirmed
+      
+    # - name: "InvBatVolt"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11006
+    #   state_class: measurement
+    #   unit_of_measurement: "V"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: holding
+    # - name: "InvBatPower"
+    #   scan_interval: 5
+    #   slave: 247
+    #   address: 11007
+    #   state_class: measurement
+    #   unit_of_measurement: "kW"
+    #   data_type: int16
+    #   scale: 0.01
+    #   precision: 2
+    #   input_type: holding
 
 
-    - name: "EPS RVolt"
-      scan_interval: 30
-      slave: 247
-      address: 11015
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      input_type: holding
-    - name: "Grid CT"
-      scan_interval: 5
-      slave: 247
-      address: 11021
-      state_class: measurement
-      unit_of_measurement: "kW"
-      data_type: int16
-      scale: 0.001
-      precision: 3
-      input_type: holding
-    - name: "InvTemp"
-      scan_interval: 30
-      slave: 247
-      address: 11024
-      state_class: measurement
-      unit_of_measurement: "°C"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      device_class: temperature
-      input_type: holding
-    - name: "AmbTemp"
-      scan_interval: 30
-      slave: 247
-      address: 11025
-      state_class: measurement
-      unit_of_measurement: "°C"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      device_class: temperature
-      input_type: holding
-    - name: "BatVolt"
-      scan_interval: 30
-      slave: 247
-      address: 11034
-      state_class: measurement
-      unit_of_measurement: "V"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      device_class: voltage
-      input_type: holding
-    - name: "Temp"
-      scan_interval: 30
-      slave: 247
-      address: 11035
-      state_class: measurement
-      unit_of_measurement: "°C"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      device_class: temperature
-      input_type: holding
+    # - name: "EPS RVolt"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11015
+    #   state_class: measurement
+    #   unit_of_measurement: "V"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   input_type: holding
+    # - name: "Grid CT"
+    #   scan_interval: 5
+    #   slave: 247
+    #   address: 11021
+    #   state_class: measurement
+    #   unit_of_measurement: "kW"
+    #   data_type: int16
+    #   scale: 0.001
+    #   precision: 3
+    #   input_type: holding
+    # - name: "InvTemp"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11024
+    #   state_class: measurement
+    #   unit_of_measurement: "°C"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   device_class: temperature
+    #   input_type: holding
+    # - name: "AmbTemp"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11025
+    #   state_class: measurement
+    #   unit_of_measurement: "°C"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   device_class: temperature
+    #   input_type: holding
+    # - name: "BatVolt"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11034
+    #   state_class: measurement
+    #   unit_of_measurement: "V"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   device_class: voltage
+    #   input_type: holding
+    # - name: "Temp"
+    #   scan_interval: 30
+    #   slave: 247
+    #   address: 11035
+    #   state_class: measurement
+    #   unit_of_measurement: "°C"
+    #   data_type: int16
+    #   scale: 0.1
+    #   precision: 1
+    #   device_class: temperature
+    #   input_type: holding
