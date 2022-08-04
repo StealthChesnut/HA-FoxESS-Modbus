@@ -2,6 +2,6 @@
 {
   "name": "FoxESS Community Modbus Integration",
   "country": "GB",
-  "render_readme": "True",
-  "content_in_root": "True"
+  "render_readme": true,
+  "content_in_root": true
 }
