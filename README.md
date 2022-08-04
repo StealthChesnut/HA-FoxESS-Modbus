@@ -44,11 +44,19 @@ Note: Currently investigating direct LAN connection - additional hardware detail
 
 <p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
 
+## HACS Installation  
+* Add this repository to your HACS custom integrations
+* Install from HACS
+* Create a full backup of your HA instance including the configuration.yaml file
+* Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
+* Check your config is valid, then Restart HA
+* Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
+
 ## Manual installation
 * Hardware configuration instructions can be found on the [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/)
 * Create a full backup of your HA instance including the configuration.yaml file
-* Copy the contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
-* Create a new file called [modbus.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/modbus.yaml) and place alongside your configuration.yaml file
+* Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
+* Copy the Required modbus file (USB or LAN) file to /config/custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
 * Check your config is valid, then Restart HA
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
