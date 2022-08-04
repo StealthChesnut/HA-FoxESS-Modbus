@@ -2,7 +2,7 @@
 {
   "name": "FoxESS Community Modbus Integration",
   "country": "GB",
-  "domains": ["energy", "sensor"],
+  "domains": ["sensor"],
   "render_readme": "True",
   "content_in_root": "True"
 }
