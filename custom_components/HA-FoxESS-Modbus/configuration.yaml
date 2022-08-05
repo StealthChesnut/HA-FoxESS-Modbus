@@ -12,8 +12,8 @@
 # AN: Add a new secret to your secrets file - FoxESSInverterIP: <your inverter IP>
 
 
-modbus: !include custom_components\HA-FoxESS-Modbus\modbusUSB.yaml
-modbus: !include custom_components\HA-FoxESS-Modbus\modbusLAN.yaml
+modbus: !include custom_components/HA-FoxESS-Modbus/modbusUSB.yaml
+modbus: !include custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
 
 #Sensors turn power values into power/hour values for meters
 sensor:
