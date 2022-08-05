@@ -47,19 +47,19 @@ Connecting to your inverter can be acheived in two ways:
 
 <p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
 
-## HACS Installation  
+## HACS Specific Installation  
 * Add this repository to your HACS custom integrations
 * Install from HACS
-* Create a full backup of your HA instance including the configuration.yaml file
-* Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
-* Check your config is valid, then Restart HA
-* Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
-## Manual installation
+## Manual Specific installation
 * Hardware configuration instructions can be found on the [wiki](https://github.com/StealthChesnut/HA-FoxESS-Modbus/wiki/)
+* Copy the Required modbus file (USB or LAN) file to /config/custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
+
+## Then, Common Installation Steps
+
 * Create a full backup of your HA instance including the configuration.yaml file
 * Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
-* Copy the Required modbus file (USB or LAN) file to /config/custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
+* For LAN, create your Secrets file entry
 * Check your config is valid, then Restart HA
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
