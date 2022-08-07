@@ -260,4 +260,4 @@
       device_class: temperature
       input_type: input
 
-  !include sensors.yaml
+ # !include sensors.yaml
