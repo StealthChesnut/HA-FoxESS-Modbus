@@ -126,7 +126,7 @@
       input_type: holding
       device_class: frequency
       
-    - name: "Grid Export"
+    - name: "Grid CT"
       scan_interval: 5
       address: 31014
       state_class: measurement
