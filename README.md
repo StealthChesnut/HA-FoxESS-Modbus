@@ -58,7 +58,7 @@ Connecting to your inverter can be acheived in two ways:
 ## Then, Common Installation Steps
 
 * Create a full backup of your HA instance including the configuration.yaml file
-* Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/configuration.yaml) file to your config file
+* Copy the Required modbus line (USB or LAN) and following contents of the [configuration.yaml](https://github.com/StealthChesnut/HA-FoxESS-Modbus/blob/main/custom_components/HA-FoxESS-Modbus/configuration.yaml) file to your config file
 * For LAN, create your Secrets file entry
 * Check your config is valid, then Restart HA
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
