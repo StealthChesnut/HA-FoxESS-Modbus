@@ -9,7 +9,7 @@
 #
 # USB: Edit the file to update the connection settings
 #
-# AN: Add a new secret to your secrets file - FoxESSInverterIP: <your inverter IP>
+# LAN: Add a new secret to your secrets file - FoxESSInverterIP: <your inverter IP>
 
 
 modbus: !include custom_components/HA-FoxESS-Modbus/modbusUSB.yaml
