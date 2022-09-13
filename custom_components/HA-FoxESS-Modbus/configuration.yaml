@@ -136,7 +136,7 @@ sensor:
                + states('sensor.grid_consumption') | float(default=0)
                + states('sensor.battery_discharge') | float(default=0)
                - states('sensor.battery_charge') | float(default=0)
-               - states('sensor.feedin_power') | float(default=0)
+               - states('sensor.feed_in_power') | float(default=0)
                - states('sensor.load_power') | float(default=0) )) | round(2) }}
 
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
