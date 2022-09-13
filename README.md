@@ -14,7 +14,7 @@
 ---
 
 Connecting to your inverter can be acheived in two ways:  
-* LAN cable connected to your inverter  
+* Using the inverters LAN port connected to your router/switch (no additional hardware required)  
     
 * Connecting to the COM port using a [RS485 to USB](https://www.amazon.co.uk/dp/B078X5H8H7?ref_=cm_sw_r_cp_ud_dp_CR8FQK7A50FNCH530QJP) adapter or [WIFI/LAN RS485](https://www.amazon.co.uk/dp/B07DNWM62H?ref_=cm_sw_r_cp_ud_dp_BPWX7Z53PDES4WJ9JY89) converter  
 
