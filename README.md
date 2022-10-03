@@ -43,6 +43,8 @@ Connecting to your inverter can be acheived in two ways:
 ✅ AIO-H1-5.0 <br>
 ✅ AIO-H1-6.0 <br>
 
+**For T Series - See [this alternative project](https://github.com/assembly12/Foxess-T-series-ESPHome-Home-Assistant) by [assembly12](https://github.com/assembly12)** <br>
+
 ---
 
 <p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
