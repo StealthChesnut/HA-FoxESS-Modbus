@@ -16,121 +16,109 @@ modbus: !include custom_components/HA-FoxESS-Modbus/modbusUSB.yaml
 modbus: !include custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
 
 #Sensors turn power values into power/hour values for meters
-sensor:
-- platform: integration
-  name: pv1_sum
-  source: sensor.pv1_power
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: pv2_sum
-  source: sensor.pv2_power
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: load_sum
-  source: sensor.load_power
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: bat_charge_sum
-  source: sensor.battery_charge
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: bat_discharge_sum
-  source: sensor.battery_discharge
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: feedin_sum
-  source: sensor.feed_in_power
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: grid_consumption_sum
-  source: sensor.grid_consumption
-  unit_time: h
-  method: left
-  round: 2
-- platform: integration
-  name: losses_sum
-  source: sensor.system_losses
-  unit_time: h
-  method: left
-  round: 2
+sensor: 
+  - method: left
+    name: pv1_sum
+    platform: integration
+    round: 2
+    source: sensor.pv1_power
+    unit_time: h
+  - method: left
+    name: pv2_sum
+    platform: integration
+    round: 2
+    source: sensor.pv2_power
+    unit_time: h
+  - method: left
+    name: pv_total_sum
+    platform: integration
+    round: 2
+    source: sensor.pv_power_now
+    unit_time: h
+  - method: left
+    name: load_sum
+    platform: integration
+    round: 2
+    source: sensor.load_power
+    unit_time: h
+  - method: left
+    name: bat_charge_sum
+    platform: integration
+    round: 2
+    source: sensor.battery_charge
+    unit_time: h
+  - method: left
+    name: bat_discharge_sum
+    platform: integration
+    round: 2
+    source: sensor.battery_discharge
+    unit_time: h
+  - method: left
+    name: feedin_sum
+    platform: integration
+    round: 2
+    source: sensor.feed_in_power
+    unit_time: h
+  - method: left
+    name: grid_consumption_sum
+    platform: integration
+    round: 2
+    source: sensor.grid_consumption
+    unit_time: h
 
  #Templates enable math operations against states/values to give us better data
-- platform: template
-  sensors:
-    battery_discharge:
-          friendly_name: "Battery discharge"
-          unit_of_measurement: 'kW'
-          device_class: power
-          value_template: >
+template:
+  - sensor:
+      - name: "Battery Discharge"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
             {% if (states('sensor.battery_discharge_power') | float(default=0) ) > 0 %}
             {{ states('sensor.battery_discharge_power') | float(default=0) * 1 }}
             {% else %}
             0 
             {% endif %}
-    battery_charge:
-          friendly_name: "Battery charge"
-          unit_of_measurement: 'kW'
-          device_class: power
-          value_template: >
+      - name: "Battery Charge"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
             {% if (states('sensor.battery_discharge_power') | float(default=0) ) < 0 %}
             {{ states('sensor.battery_discharge_power') | float(default=0) * -1 }}
             {% else %}
             0 
             {% endif %}
-            
-    feed_in_power:
-          friendly_name: "FeedIn power"
-          unit_of_measurement: 'kW'
-          device_class: power
-          value_template: >
+      - name: "Feed In Power"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
             {% if (states('sensor.grid_ct') | float(default=0) ) > 0 %}
             {{ states('sensor.grid_ct') | float(default=0) * 1 }}
             {% else %}
             0 
             {% endif %}
-            
-    grid_consumption:
-          friendly_name: "Grid consumption"
-          unit_of_measurement: 'kW'
-          device_class: power
-          value_template: >
+      - name: "Grid Consumption"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
             {% if (states('sensor.grid_ct') | float(default=0) ) < 0 %}
             {{ states('sensor.grid_ct') | float(default=0) * -1 }}
             {% else %}
             0 
             {% endif %}
-            
-    pv_total_power:
-          friendly_name: "PV Power now"
-          unit_of_measurement: 'kW'
-          device_class: power
-          value_template: >
+      - name: "PV Power Now"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
               {{ (states('sensor.pv1_power') | float(default=0) + states('sensor.pv2_power') | float(default=0) ) * 1 }}
-              
-    pv_total_daily:
-          friendly_name: "PV Energy daily"
-          unit_of_measurement: 'kWh'
-          device_class: energy
-          value_template: >
+      - name: "PV Energy Daily"
+        device_class: "energy"
+        unit_of_measurement: "kWh"
+        state: >
               {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
-
-    system_losses:
-           friendly_name: "System Losses"
-           unit_of_measurement: 'kW'
-           device_class: power
-           value_template: >
+      - name: "System Losses"
+        device_class: "power"
+        unit_of_measurement: "kW"
+        state: >
                {{ ((states('sensor.pv1_power') | float(default=0)
                + states('sensor.pv2_power') | float(default=0)
                + states('sensor.grid_consumption') | float(default=0)
