@@ -1,5 +1,5 @@
 {
-    "domain": "HA-FoxESS-Modbus",
+    "domain": "FoxESS",
     "name": "FoxESS Community Modbus Integration",
     "documentation": "https://github.com/StealthChesnut/HA-FoxESS-Modbus",
     "issue_tracker": "https://github.com/StealthChesnut/HA-FoxESS-Modbus/issues",
