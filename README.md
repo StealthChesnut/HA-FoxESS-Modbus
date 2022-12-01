@@ -66,7 +66,7 @@ Connecting to your inverter can be acheived in two ways:
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
 
-[Step by step walkthrough of the setup](https://youtu.be/uMPr0V6lTHg)
+[Step by step walkthrough of the setup](https://youtu.be/jRTE9UZkpHU)
 ![image](https://user-images.githubusercontent.com/6324545/166504169-81fd77e8-df5b-40f0-9c1f-9735e59b2723.png)
 
 ## Engergy Dashboard Configuration
