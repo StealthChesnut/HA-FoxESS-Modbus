@@ -259,5 +259,55 @@
       precision: 1
       device_class: temperature
       input_type: input
-
+    - name: "Min SoC"
+      scan_interval: 60
+      slave: 247
+      address: 41009
+      state_class: measurement
+      unit_of_measurement: "%"
+      data_type: int16
+      input_type: input
+      device_class: battery
+    - name: "Min SoC (On Grid)"
+      scan_interval: 60
+      slave: 247
+      address: 41011
+      state_class: measurement
+      unit_of_measurement: "%"
+      data_type: int16
+      input_type: input
+      device_class: battery
+    - name: "Time Period 1 - Start"
+      address: 41002
+      scan_interval: 60
+      slave: 247
+      input_type: input
+    - name: "Time Period 1 - End"
+      address: 41003
+      scan_interval: 60
+      slave: 247
+      input_type: input
+    - name: "Time Period 2 - Start"
+      address: 41005
+      scan_interval: 60
+      slave: 247
+      input_type: input
+    - name: "Time Period 2 - End"
+      address: 41006
+      scan_interval: 60
+      slave: 247
+      input_type: input
+      
+  binary_sensors:
+    - name: "Time Period 1 - Enabled"
+      address: 41001
+      scan_interval: 60
+      slave: 247
+      input_type: input
+    - name: "Time Period 2 - Enabled"
+      address: 41004
+      scan_interval: 60
+      slave: 247
+      input_type: input
+      
  # !include sensors.yaml
