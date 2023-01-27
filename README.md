@@ -14,8 +14,9 @@
 ---
 
 Connecting to your inverter can be acheived in two ways:  
-* LAN cable connected to your inverter  
-    
+* Using the inverters LAN port connected to your router/switch (no additional hardware required)  
+* 22/12/22 - Manager version 1.56 appears to break the LAN connectivity option!
+  
 * Connecting to the COM port using a [RS485 to USB](https://www.amazon.co.uk/dp/B078X5H8H7?ref_=cm_sw_r_cp_ud_dp_CR8FQK7A50FNCH530QJP) adapter or [WIFI/LAN RS485](https://www.amazon.co.uk/dp/B07DNWM62H?ref_=cm_sw_r_cp_ud_dp_BPWX7Z53PDES4WJ9JY89) converter  
 
 ⚠️ Additional hardware requires basic electronics competencies to connect the two additional wires for the RS485 interface to the inverters com connector.⚠️
@@ -43,6 +44,8 @@ Connecting to your inverter can be acheived in two ways:
 ✅ AIO-H1-5.0 <br>
 ✅ AIO-H1-6.0 <br>
 
+**For T Series - See [this alternative project](https://github.com/assembly12/Foxess-T-series-ESPHome-Home-Assistant) by [assembly12](https://github.com/assembly12)** <br>
+
 ---
 
 <p>The aim of this project is to enable the full use of the Energy dashboard in Home Assistant and is a fully functional replacement of the FoxESS App for reporting needs.</p>
@@ -64,7 +67,7 @@ Connecting to your inverter can be acheived in two ways:
 * Map energy dashboard as per below example and enjoy configuring dashboards using near realtime data.
 
 
-[Step by step walkthrough of the setup](https://youtu.be/uMPr0V6lTHg)
+[Step by step walkthrough of the setup](https://youtu.be/jRTE9UZkpHU)
 ![image](https://user-images.githubusercontent.com/6324545/166504169-81fd77e8-df5b-40f0-9c1f-9735e59b2723.png)
 
 ## Engergy Dashboard Configuration
