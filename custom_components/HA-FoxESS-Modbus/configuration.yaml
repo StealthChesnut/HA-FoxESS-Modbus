@@ -126,6 +126,34 @@ template:
                - states('sensor.battery_charge') | float(default=0)
                - states('sensor.feed_in_power') | float(default=0)
                - states('sensor.load_power') | float(default=0) )) | round(2) }}
+      - name: "Time Period 1 - Start Time"
+        icon: "mdi:calendar-clock"
+        state: >
+          {% set raw_time = states('sensor.time_period_1_start') | int %}
+          {% set hours = raw_time // 256 %}
+          {% set minutes = raw_time - (hours * 256) %}
+          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+      - name: "Time Period 1 - End Time"
+        icon: "mdi:calendar-clock"
+        state: >
+          {% set raw_time = states('sensor.time_period_1_end') | int %}
+          {% set hours = raw_time // 256 %}
+          {% set minutes = raw_time - (hours * 256) %}
+          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+      - name: "Time Period 2 - Start Time"
+        icon: "mdi:calendar-clock"
+        state: >
+          {% set raw_time = states('sensor.time_period_2_start') | int %}
+          {% set hours = raw_time // 256 %}
+          {% set minutes = raw_time - (hours * 256) %}
+          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+      - name: "Time Period 2 - End Time"
+        icon: "mdi:calendar-clock"
+        state: >
+          {% set raw_time = states('sensor.time_period_2_end') | int %}
+          {% set hours = raw_time // 256 %}
+          {% set minutes = raw_time - (hours * 256) %}
+          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
 
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:
