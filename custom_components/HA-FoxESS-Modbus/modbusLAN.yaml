@@ -136,6 +136,16 @@
       precision: 3
       input_type: holding    
       device_class: power
+    - name: "CT2"
+      scan_interval: 5
+      address: 31015
+      state_class: measurement
+      unit_of_measurement: "kW"
+      data_type: int16
+      scale: 0.001
+      precision: 3
+      input_type: holding    
+      device_class: power
     - name: "Load Power"
       scan_interval: 5
       address: 31016
