@@ -65,6 +65,12 @@ sensor:
     round: 2
     source: sensor.grid_consumption
     unit_time: h
+  - platform: integration
+    name: losses_sum
+    source: sensor.system_losses
+    unit_time: h
+    method: left
+    round: 2
 
  #Templates enable math operations against states/values to give us better data
 template:
