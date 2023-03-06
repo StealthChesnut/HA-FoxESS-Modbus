@@ -350,17 +350,6 @@
       precision: 1
       device_class: temperature
       input_type: input
-    - name: "BMS Cell Temp Reported"
-      scan_interval: 30
-      slave: 247
-      address: 11038
-      state_class: measurement
-      unit_of_measurement: "°C"
-      data_type: int16
-      scale: 0.1
-      precision: 1
-      device_class: temperature
-      input_type: input
     - name: "BMS Watthours Total"
       address: 11049
       scan_interval: 60
