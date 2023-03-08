@@ -303,21 +303,21 @@
       scan_interval: 5
       slave: 247
       input_type: input
-      device_class: battery
+      device_class: voltage
       unit_of_measurement: "mV"
     - name: "BMS Cell mV Low"
       address: 11046
       scan_interval: 5
       slave: 247
       input_type: input
-      device_class: battery
+      device_class: voltage
       unit_of_measurement: "mV"
     - name: "BMS Charge Rate"
       address: 11041
       scan_interval: 30
       slave: 247
       input_type: input
-      device_class: battery
+      device_class: current
       unit_of_measurement: "A"
       scale: 0.1
     - name: "BMS Discharge Rate"
@@ -325,7 +325,7 @@
       scan_interval: 30
       slave: 247
       input_type: input
-      device_class: battery
+      device_class: current
       unit_of_measurement: "A"
       scale: 0.1
     - name: "BMS Cell Temp Low"
@@ -356,7 +356,7 @@
       slave: 247
       input_type: input
       unit_of_measurement: "Ah"
-      device_class: power
+      device_class: energy
     - name: "BMS kWh Remaining"
       address: 11037
       scan_interval: 60
@@ -364,7 +364,7 @@
       input_type: input
       scale: 0.01
       precision: 2
-      device_class: battery
+      device_class: energy
       unit_of_measurement: "kWh"
 
   binary_sensors:
