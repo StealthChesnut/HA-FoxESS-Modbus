@@ -84,102 +84,102 @@ sensor:
  #Templates enable math operations against states/values to give us better data
 template:
   - sensor:
-      - name: "Battery Discharge"
-        unique_id: foxess_inv1_battery_discharge
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-            {% if (states('sensor.battery_discharge_power') | float(default=0) ) > 0 %}
-            {{ states('sensor.battery_discharge_power') | float(default=0) * 1 }}
-            {% else %}
-            0 
-            {% endif %}
-      - name: "Battery Charge"
-        unique_id: foxess_inv1_battery_charge
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-            {% if (states('sensor.battery_discharge_power') | float(default=0) ) < 0 %}
-            {{ states('sensor.battery_discharge_power') | float(default=0) * -1 }}
-            {% else %}
-            0 
-            {% endif %}
-      - name: "Feed In Power"
-        unique_id: foxess_inv1_feed_in_power
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-            {% if (states('sensor.grid_ct') | float(default=0) ) > 0 %}
-            {{ states('sensor.grid_ct') | float(default=0) * 1 }}
-            {% else %}
-            0 
-            {% endif %}
-      - name: "Grid Consumption"
-        unique_id: foxess_inv1_grid_consumption
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-            {% if (states('sensor.grid_ct') | float(default=0) ) < 0 %}
-            {{ states('sensor.grid_ct') | float(default=0) * -1 }}
-            {% else %}
-            0 
-            {% endif %}
-      - name: "PV Power Now"
-        unique_id: foxess_inv1_pv_power_now
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-              {{ (states('sensor.pv1_power') | float(default=0) + states('sensor.pv2_power') | float(default=0) ) * 1 }}
-      - name: "PV Energy Daily"
-        unique_id: foxess_inv1_pv_energy_daily
-        device_class: "energy"
-        unit_of_measurement: "kWh"
-        state: >
-              {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
-      - name: "System Losses"
-        unique_id: foxess_inv1_system_losses
-        device_class: "power"
-        unit_of_measurement: "kW"
-        state: >
-               {{ ((states('sensor.pv1_power') | float(default=0)
-               + states('sensor.pv2_power') | float(default=0)
-               + states('sensor.grid_consumption') | float(default=0)
-               + states('sensor.battery_discharge') | float(default=0)
-               - states('sensor.battery_charge') | float(default=0)
-               - states('sensor.feed_in_power') | float(default=0)
-               - states('sensor.load_power') | float(default=0) )) | round(2) }}
-      - name: "Time Period 1 - Start Time"
-        unique_id: foxess_inv1_time_period_1_start_time
-        icon: "mdi:calendar-clock"
-        state: >
-          {% set raw_time = states('sensor.time_period_1_start') | int %}
-          {% set hours = raw_time // 256 %}
-          {% set minutes = raw_time - (hours * 256) %}
-          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
-      - name: "Time Period 1 - End Time"
-        unique_id: foxess_inv1_time_period_1_end_time
-        icon: "mdi:calendar-clock"
-        state: >
-          {% set raw_time = states('sensor.time_period_1_end') | int %}
-          {% set hours = raw_time // 256 %}
-          {% set minutes = raw_time - (hours * 256) %}
-          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
-      - name: "Time Period 2 - Start Time"
-        unique_id: foxess_inv1_time_period_2_start_time
-        icon: "mdi:calendar-clock"
-        state: >
-          {% set raw_time = states('sensor.time_period_2_start') | int %}
-          {% set hours = raw_time // 256 %}
-          {% set minutes = raw_time - (hours * 256) %}
-          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
-      - name: "Time Period 2 - End Time"
-        unique_id: foxess_inv1_time_period_2_end_time
-        icon: "mdi:calendar-clock"
-        state: >
-          {% set raw_time = states('sensor.time_period_2_end') | int %}
-          {% set hours = raw_time // 256 %}
-          {% set minutes = raw_time - (hours * 256) %}
-          {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+    - name: "Battery Discharge"
+      unique_id: foxess_inv1_battery_discharge
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+          {% if (states('sensor.battery_discharge_power') | float(default=0) ) > 0 %}
+          {{ states('sensor.battery_discharge_power') | float(default=0) * 1 }}
+          {% else %}
+          0 
+          {% endif %}
+    - name: "Battery Charge"
+      unique_id: foxess_inv1_battery_charge
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+          {% if (states('sensor.battery_discharge_power') | float(default=0) ) < 0 %}
+          {{ states('sensor.battery_discharge_power') | float(default=0) * -1 }}
+          {% else %}
+          0 
+          {% endif %}
+    - name: "Feed In Power"
+      unique_id: foxess_inv1_feed_in_power
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+          {% if (states('sensor.grid_ct') | float(default=0) ) > 0 %}
+          {{ states('sensor.grid_ct') | float(default=0) * 1 }}
+          {% else %}
+          0 
+          {% endif %}
+    - name: "Grid Consumption"
+      unique_id: foxess_inv1_grid_consumption
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+          {% if (states('sensor.grid_ct') | float(default=0) ) < 0 %}
+          {{ states('sensor.grid_ct') | float(default=0) * -1 }}
+          {% else %}
+          0 
+          {% endif %}
+    - name: "PV Power Now"
+      unique_id: foxess_inv1_pv_power_now
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+            {{ (states('sensor.pv1_power') | float(default=0) + states('sensor.pv2_power') | float(default=0) ) * 1 }}
+    - name: "PV Energy Daily"
+      unique_id: foxess_inv1_pv_energy_daily
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state: >
+            {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
+    - name: "System Losses"
+      unique_id: foxess_inv1_system_losses
+      device_class: "power"
+      unit_of_measurement: "kW"
+      state: >
+             {{ ((states('sensor.pv1_power') | float(default=0)
+             + states('sensor.pv2_power') | float(default=0)
+             + states('sensor.grid_consumption') | float(default=0)
+             + states('sensor.battery_discharge') | float(default=0)
+             - states('sensor.battery_charge') | float(default=0)
+             - states('sensor.feed_in_power') | float(default=0)
+             - states('sensor.load_power') | float(default=0) )) | round(2) }}
+    - name: "Time Period 1 - Start Time"
+      unique_id: foxess_inv1_time_period_1_start_time
+      icon: "mdi:calendar-clock"
+      state: >
+        {% set raw_time = states('sensor.time_period_1_start') | int %}
+        {% set hours = raw_time // 256 %}
+        {% set minutes = raw_time - (hours * 256) %}
+        {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+    - name: "Time Period 1 - End Time"
+      unique_id: foxess_inv1_time_period_1_end_time
+      icon: "mdi:calendar-clock"
+      state: >
+        {% set raw_time = states('sensor.time_period_1_end') | int %}
+        {% set hours = raw_time // 256 %}
+        {% set minutes = raw_time - (hours * 256) %}
+        {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+    - name: "Time Period 2 - Start Time"
+      unique_id: foxess_inv1_time_period_2_start_time
+      icon: "mdi:calendar-clock"
+      state: >
+        {% set raw_time = states('sensor.time_period_2_start') | int %}
+        {% set hours = raw_time // 256 %}
+        {% set minutes = raw_time - (hours * 256) %}
+        {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
+    - name: "Time Period 2 - End Time"
+      unique_id: foxess_inv1_time_period_2_end_time
+      icon: "mdi:calendar-clock"
+      state: >
+        {% set raw_time = states('sensor.time_period_2_end') | int %}
+        {% set hours = raw_time // 256 %}
+        {% set minutes = raw_time - (hours * 256) %}
+        {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
 
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:
