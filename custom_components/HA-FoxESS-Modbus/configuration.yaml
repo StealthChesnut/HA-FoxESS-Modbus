@@ -19,54 +19,63 @@ modbus: !include custom_components/HA-FoxESS-Modbus/modbusLAN.yaml
 sensor: 
   - method: left
     name: pv1_sum
+    unique_id: foxess_inv1_pv1_sum
     platform: integration
     round: 2
     source: sensor.pv1_power
     unit_time: h
   - method: left
     name: pv2_sum
+    unique_id: foxess_inv1_pv2_sum
     platform: integration
     round: 2
     source: sensor.pv2_power
     unit_time: h
   - method: left
     name: pv_total_sum
+    unique_id: foxess_inv1_pv_total_sum
     platform: integration
     round: 2
     source: sensor.pv_power_now
     unit_time: h
   - method: left
     name: load_sum
+    unique_id: foxess_inv1_load_sum
     platform: integration
     round: 2
     source: sensor.load_power
     unit_time: h
   - method: left
     name: bat_charge_sum
+    unique_id: foxess_inv1_bat_charge_sum
     platform: integration
     round: 2
     source: sensor.battery_charge
     unit_time: h
   - method: left
     name: bat_discharge_sum
+    unique_id: foxess_inv1_bat_discharge_sum
     platform: integration
     round: 2
     source: sensor.battery_discharge
     unit_time: h
   - method: left
     name: feedin_sum
+    unique_id: foxess_inv1_feedin_sum
     platform: integration
     round: 2
     source: sensor.feed_in_power
     unit_time: h
   - method: left
     name: grid_consumption_sum
+    unique_id: foxess_inv1_grid_consumption_sum
     platform: integration
     round: 2
     source: sensor.grid_consumption
     unit_time: h
   - platform: integration
     name: losses_sum
+    unique_id: foxess_inv1_losses_sum
     source: sensor.system_losses
     unit_time: h
     method: left
@@ -76,6 +85,7 @@ sensor:
 template:
   - sensor:
       - name: "Battery Discharge"
+        unique_id: foxess_inv1_battery_discharge
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
@@ -85,6 +95,7 @@ template:
             0 
             {% endif %}
       - name: "Battery Charge"
+        unique_id: foxess_inv1_battery_charge
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
@@ -94,6 +105,7 @@ template:
             0 
             {% endif %}
       - name: "Feed In Power"
+        unique_id: foxess_inv1_feed_in_power
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
@@ -103,6 +115,7 @@ template:
             0 
             {% endif %}
       - name: "Grid Consumption"
+        unique_id: foxess_inv1_grid_consumption
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
@@ -112,16 +125,19 @@ template:
             0 
             {% endif %}
       - name: "PV Power Now"
+        unique_id: foxess_inv1_pv_power_now
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
               {{ (states('sensor.pv1_power') | float(default=0) + states('sensor.pv2_power') | float(default=0) ) * 1 }}
       - name: "PV Energy Daily"
+        unique_id: foxess_inv1_pv_energy_daily
         device_class: "energy"
         unit_of_measurement: "kWh"
         state: >
               {{ ((states('sensor.pv1_daily') | float(default=0) + states('sensor.pv2_daily') | float(default=0) ) * 1 ) | round(2) }} 
       - name: "System Losses"
+        unique_id: foxess_inv1_system_losses
         device_class: "power"
         unit_of_measurement: "kW"
         state: >
@@ -133,6 +149,7 @@ template:
                - states('sensor.feed_in_power') | float(default=0)
                - states('sensor.load_power') | float(default=0) )) | round(2) }}
       - name: "Time Period 1 - Start Time"
+        unique_id: foxess_inv1_time_period_1_start_time
         icon: "mdi:calendar-clock"
         state: >
           {% set raw_time = states('sensor.time_period_1_start') | int %}
@@ -140,6 +157,7 @@ template:
           {% set minutes = raw_time - (hours * 256) %}
           {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
       - name: "Time Period 1 - End Time"
+        unique_id: foxess_inv1_time_period_1_end_time
         icon: "mdi:calendar-clock"
         state: >
           {% set raw_time = states('sensor.time_period_1_end') | int %}
@@ -147,6 +165,7 @@ template:
           {% set minutes = raw_time - (hours * 256) %}
           {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
       - name: "Time Period 2 - Start Time"
+        unique_id: foxess_inv1_time_period_2_start_time
         icon: "mdi:calendar-clock"
         state: >
           {% set raw_time = states('sensor.time_period_2_start') | int %}
@@ -154,6 +173,7 @@ template:
           {% set minutes = raw_time - (hours * 256) %}
           {{ strptime(hours | string + ":" + minutes | string, '%H:%M').time() }}
       - name: "Time Period 2 - End Time"
+        unique_id: foxess_inv1_time_period_2_end_time
         icon: "mdi:calendar-clock"
         state: >
           {% set raw_time = states('sensor.time_period_2_end') | int %}
@@ -164,26 +184,34 @@ template:
 # Utility Meters - Provides meters to be used with the energy dashboard and reset daily
 utility_meter:
   load_daily:
+    unique_id: foxess_inv1_load_daily
     source: sensor.load_sum
     cycle: daily
   pv1_daily:
+    unique_id: foxess_inv1_pv1_daily
     source: sensor.pv1_sum
     cycle: daily
   pv2_daily:
+    unique_id: foxess_inv1_pv2_daily
     source: sensor.pv2_sum
     cycle: daily
   bat_charge_daily:
+    unique_id: foxess_inv1_bat_charge_daily
     source: sensor.bat_charge_sum
     cycle: daily
   bat_discharge_daily:
+    unique_id: foxess_inv1_bat_discharge_daily
     source: sensor.bat_discharge_sum
     cycle: daily
   feedin_daily:
+    unique_id: foxess_inv1_feedin_daily
     source: sensor.feedin_sum
     cycle: daily
   grid_daily:
+    unique_id: foxess_inv1_grid_daily
     source: sensor.grid_consumption_sum
     cycle: daily
   losses_daily:
+    unique_id: foxess_inv1_losses_daily
     source: sensor.losses_sum
     cycle: daily
