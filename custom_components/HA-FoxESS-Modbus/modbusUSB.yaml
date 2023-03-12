@@ -25,6 +25,7 @@
 
   sensors:
     - name: "PV1-Voltage"
+      unique_id: foxess_inv1_pv1_voltage
       scan_interval: 30
       slave: 247
       address: 11000
@@ -36,6 +37,7 @@
       input_type: input
       device_class: voltage
     - name: "PV1-Current"
+      unique_id: foxess_inv1_pv1_current
       scan_interval: 30
       slave: 247
       address: 11001
@@ -47,6 +49,7 @@
       input_type: input
       device_class: current
     - name: "PV1-Power"
+      unique_id: foxess_inv1_pv1_power
       scan_interval: 5
       slave: 247
       address: 11002
@@ -58,6 +61,7 @@
       input_type: input
       device_class: power
     - name: "PV2-Voltage"
+      unique_id: foxess_inv1_pv2_voltage
       scan_interval: 30
       slave: 247
       address: 11003
@@ -69,6 +73,7 @@
       input_type: input
       device_class: voltage
     - name: "PV2-Current"
+      unique_id: foxess_inv1_pv2_current
       scan_interval: 30
       slave: 247
       address: 11004
@@ -80,6 +85,7 @@
       input_type: input
       device_class: current
     - name: "PV2-Power"
+      unique_id: foxess_inv1_pv2_power
       scan_interval: 5
       slave: 247
       address: 11005
@@ -91,6 +97,7 @@
       input_type: input
       device_class: power
     - name: "Battery-SoC"
+      unique_id: foxess_inv1_battery_soc
       scan_interval: 30
       slave: 247
       address: 11036
@@ -100,6 +107,7 @@
       input_type: input
       device_class: battery
     - name: "Battery-Temp"
+      unique_id: foxess_inv1_battery_temperature
       scan_interval: 60
       slave: 247
       address: 11038
@@ -111,6 +119,7 @@
       input_type: input
       device_class: temperature
     - name: "Battery-Discharge-Power"
+      unique_id: foxess_inv1_battery_power
       scan_interval: 5
       slave: 247
       address: 11008
@@ -122,6 +131,7 @@
       input_type: input
       device_class: power
     - name: "Load Power"
+      unique_id: foxess_inv1_load_power
       scan_interval: 5
       slave: 247
       address: 11023
@@ -133,6 +143,7 @@
       input_type: input
       device_class: power
     - name: "InvBatVolt"
+      unique_id: foxess_inv1_inverter_battery_voltage
       scan_interval: 30
       slave: 247
       address: 11006
@@ -143,6 +154,7 @@
       precision: 1
       input_type: input
     - name: "InvBatPower"
+      unique_id: foxess_inv1_inverter_battery_power
       scan_interval: 5
       slave: 247
       address: 11007
@@ -153,6 +165,7 @@
       precision: 2
       input_type: input
     - name: "RVolt"
+      unique_id: foxess_inv1_grid_voltage_R
       scan_interval: 30
       slave: 247
       address: 11009
@@ -164,6 +177,7 @@
       input_type: input
       device_class: voltage
     - name: "RCurrent"
+      unique_id: foxess_inv1_inv_current_R
       scan_interval: 30
       slave: 247
       address: 11010
@@ -175,6 +189,7 @@
       input_type: input
       device_class: current
     - name: "RFreq"
+      unique_id: foxess_inv1_grid_frequency
       scan_interval: 30
       slave: 247
       address: 11014
@@ -186,6 +201,7 @@
       input_type: input
       device_class: frequency
     - name: "EPS RVolt"
+      unique_id: foxess_inv1_eps_rvolt
       scan_interval: 30
       slave: 247
       address: 11015
@@ -196,6 +212,7 @@
       precision: 1
       input_type: input
     - name: "Grid CT"
+      unique_id: foxess_inv1_grid_ct
       scan_interval: 5
       slave: 247
       address: 11021
@@ -206,6 +223,7 @@
       precision: 3
       input_type: input
     - name: "CT2 Meter"
+      unique_id: foxess_inv1_ct2
       scan_interval: 1
       slave: 247
       address: 11022
@@ -216,6 +234,7 @@
       precision: 3
       input_type: input
     - name: "InvTemp"
+      unique_id: foxess_inv1_inverter_temperature
       scan_interval: 30
       slave: 247
       address: 11024
@@ -227,6 +246,7 @@
       device_class: temperature
       input_type: input
     - name: "AmbTemp"
+      unique_id: foxess_inv1_ambient_temperature
       scan_interval: 30
       slave: 247
       address: 11025
@@ -238,6 +258,7 @@
       device_class: temperature
       input_type: input
     - name: "BatVolt"
+      unique_id: foxess_inv1_battery_voltage
       scan_interval: 30
       slave: 247
       address: 11034
@@ -249,6 +270,7 @@
       device_class: voltage
       input_type: input
     - name: "Temp"
+      unique_id: foxess_inv1_temperature
       scan_interval: 30
       slave: 247
       address: 11035
@@ -260,6 +282,7 @@
       device_class: temperature
       input_type: input
     - name: "Min SoC"
+      unique_id: foxess_inv1_min_soc
       scan_interval: 60
       slave: 247
       address: 41009
@@ -269,6 +292,7 @@
       input_type: input
       device_class: battery
     - name: "Min SoC (On Grid)"
+      unique_id: foxess_inv1_min_soc_on_grid
       scan_interval: 60
       slave: 247
       address: 41011
@@ -278,27 +302,32 @@
       input_type: input
       device_class: battery
     - name: "Time Period 1 - Start"
+      unique_id: foxess_inv1_time_period_1_start
       address: 41002
       scan_interval: 60
       slave: 247
       input_type: input
     - name: "Time Period 1 - End"
+      unique_id: foxess_inv1_time_period_1_end
       address: 41003
       scan_interval: 60
       slave: 247
       input_type: input
     - name: "Time Period 2 - Start"
+      unique_id: foxess_inv1_time_period_2_start
       address: 41005
       scan_interval: 60
       slave: 247
       input_type: input
     - name: "Time Period 2 - End"
+      unique_id: foxess_inv1_time_period_2_end
       address: 41006
       scan_interval: 60
       slave: 247
       input_type: input
 
     - name: "BMS Cell mV High"
+      unique_id: foxess_inv1_bms_cell_mv_high
       address: 11045
       scan_interval: 5
       slave: 247
@@ -306,6 +335,7 @@
       device_class: voltage
       unit_of_measurement: "mV"
     - name: "BMS Cell mV Low"
+      unique_id: foxess_inv1_bms_cell_low
       address: 11046
       scan_interval: 5
       slave: 247
@@ -313,6 +343,7 @@
       device_class: voltage
       unit_of_measurement: "mV"
     - name: "BMS Charge Rate"
+      unique_id: foxess_inv1_bms_charge_rate
       address: 11041
       scan_interval: 30
       slave: 247
@@ -321,6 +352,7 @@
       unit_of_measurement: "A"
       scale: 0.1
     - name: "BMS Discharge Rate"
+      unique_id: foxess_inv1_bms_discharge_rate
       address: 11042
       scan_interval: 30
       slave: 247
@@ -329,6 +361,7 @@
       unit_of_measurement: "A"
       scale: 0.1
     - name: "BMS Cell Temp Low"
+      unique_id: foxess_inv1_bms_cell_temperature_low
       scan_interval: 30
       slave: 247
       address: 11044
@@ -340,6 +373,7 @@
       device_class: temperature
       input_type: input
     - name: "BMS Cell Temp High"
+      unique_id: foxess_inv1_bms_cell_temperature_high
       scan_interval: 30
       slave: 247
       address: 11043
@@ -351,6 +385,7 @@
       device_class: temperature
       input_type: input
     - name: "BMS Watthours Total"
+      unique_id: foxess_inv1_bms_watthours_total
       address: 11049
       scan_interval: 60
       slave: 247
@@ -358,6 +393,7 @@
       unit_of_measurement: "Ah"
       device_class: energy
     - name: "BMS kWh Remaining"
+      unique_id: foxess_inv1_bms_kwh_remaining
       address: 11037
       scan_interval: 60
       slave: 247
@@ -369,11 +405,13 @@
 
   binary_sensors:
     - name: "Time Period 1 - Enabled"
+      unique_id: foxess_inv1_time_period_1_enabled
       address: 41001
       scan_interval: 60
       slave: 247
       input_type: input
     - name: "Time Period 2 - Enabled"
+      unique_id: foxess_inv1_time_period_2_enabled
       address: 41004
       scan_interval: 60
       slave: 247
