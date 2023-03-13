@@ -1,4 +1,4 @@
---- # ---------------------------USB/Serial--------------------------------------
+# ---------------------------USB/Serial--------------------------------------
 # Created by https://github.com/StealthChesnut/HA-FoxESS-Modbus
 # Modbus Config for Fox ESS Hybrid H1 Inverter
 # Adjust port setting to match USB port in use
@@ -14,14 +14,14 @@
   stopbits: 1
   # ---------------------------------------------------------------------------
 
-  # ---------------------------WIFI/LAN----------------------------------------
-  # If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
-  #
-  #- name: FoxESSInverterModbus
-  #  type: tcp
-  #  host: 192.168.XXX.XXX # set to USR devices ip address
-  #  port: 502
-  # ---------------------------------------------------------------------------
+# ---------------------------WIFI/LAN----------------------------------------
+# If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
+#
+#- name: FoxESSInverterModbus
+#  type: tcp
+#  host: 192.168.XXX.XXX # set to USR devices ip address
+#  port: 502
+# ---------------------------------------------------------------------------
 
   sensors:
     - name: "PV1-Voltage"
