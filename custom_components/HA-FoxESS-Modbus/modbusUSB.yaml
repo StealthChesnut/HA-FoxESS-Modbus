@@ -15,7 +15,7 @@
   # ---------------------------------------------------------------------------
 
 # ---------------------------WIFI/LAN----------------------------------------
-# If using USR Wifi converter, remove lines 6 through 13 and uncomment the following
+# If using USR Wifi converter, remove lines 7 through 14 and uncomment the following
 #
 #- name: FoxESSInverterModbus
 #  type: tcp
