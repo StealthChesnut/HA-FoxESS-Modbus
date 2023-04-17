@@ -13,6 +13,9 @@
 
 ---
 
+Please note: as of April 2023, @nathanmarlor has mirrored and extended functionality, including easier setup in this alternative https://github.com/nathanmarlor/foxess_modbus - you should likely use that instead!
+This integration is being kept open in case the information here is useful.
+
 Connecting to your inverter can be acheived in two ways:  
 * Using the inverters LAN port connected to your router/switch (no additional hardware required)  
 * 22/12/22 - Manager version 1.56 appears to break the LAN connectivity option!
